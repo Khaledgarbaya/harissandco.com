@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `harissanco`,
+        short_name: `Hnco`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/harissandco-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-postcss`,
@@ -32,15 +32,15 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
-        purgeOnly: ['src/css/style.css']
-      }
+        purgeOnly: ["src/css/style.css"],
+      },
     },
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.HCO_SPACE_ID,
-        accessToken: process.env.HCO_ACCESS_TOKEN
-      }
+        accessToken: process.env.HCO_ACCESS_TOKEN,
+      },
     },
   ],
 }
