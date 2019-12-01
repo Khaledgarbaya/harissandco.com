@@ -1,12 +1,12 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { useState } from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
 const Header = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="w-full sm:shadow-md">
-      <div className="sm:flex sm:justify-between">
+    <header className="w-full sm:shadow-md relative z-10">
+      <div className="sm:flex px-4 sm:justify-between">
         <div className="flex items-center justify-between shadow-md px-3 py-3 sm:shadow-none">
           <div>
             <Link aria-label="Harissa and co home page" to="/">
@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => {
         </div>
         <nav
           className={`sm:flex sm:items-center sm:block ${
-            isOpen ? "" : "hidden"
+            isOpen ? '' : 'hidden'
           }`}
         >
           <a className="px-2 py-2 w-full block text-center sm:w-1/3" href="#">
