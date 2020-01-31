@@ -1,12 +1,28 @@
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 
 const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query MainMenuQuery {
+      contentfulNavigation(slug: { eq: "main-menu" }) {
+        title
+        navigationElements {
+          title
+          id
+          page {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  const { navigationElements = [] } = data.contentfulNavigation
+
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="w-full sm:shadow-md">
-      <div className="sm:flex sm:justify-between">
+    <header className="w-full sm:shadow-md relative z-10">
+      <div className="sm:flex px-4 sm:justify-between">
         <div className="flex items-center justify-between shadow-md px-3 py-3 sm:shadow-none">
           <div>
             <Link aria-label="Harissa and co home page" to="/">
@@ -47,15 +63,15 @@ const Header = ({ siteTitle }) => {
             isOpen ? "" : "hidden"
           }`}
         >
-          <a className="px-2 py-2 w-full block text-center sm:w-1/3" href="#">
-            Home
-          </a>
-          <a className="px-2 py-2 w-full block text-center sm:w-1/3" href="#">
-            About
-          </a>
-          <a className="px-2 py-2 w-full block text-center sm:w-1/3" href="#">
-            Events
-          </a>
+          {navigationElements.map(({ title, id, page: { slug } }) => (
+            <Link
+              key={id}
+              className="px-2 py-2 w-full block text-center sm:w-1/3"
+              to={slug}
+            >
+              {title}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
