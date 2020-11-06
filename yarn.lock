@@ -765,17 +765,17 @@
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
 
-"@contentful/rich-text-react-renderer@^13.2.0":
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-13.2.0.tgz#19b11b981c3a0d9eaa581a9e1c2c392c812bea7e"
-  integrity sha512-4hR1XgrePX/GlLtaHYrZ7ZtrTGm67MfiVfchP7li0Dbp8sVqFY+VgN/+ejxi/uB3uk1itLzCzQfrL0xFzZDlwg==
+"@contentful/rich-text-react-renderer@^14.1.2":
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-14.1.2.tgz#b7fff19faa0512f034f1717774a0d9b348bb07fc"
+  integrity sha512-UmZ5nNvFXuD4LA2TKDDD52FgzmeMAQUVu5p9UqKDVDG6twHAD4DiWtoXSRM5Bebftlx2UH+UeWHbxIOgF/lV5A==
   dependencies:
-    "@contentful/rich-text-types" "^13.1.0"
+    "@contentful/rich-text-types" "^14.1.2"
 
-"@contentful/rich-text-types@^13.1.0":
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-13.1.0.tgz#a329b68bb3560514ffcbe07dc115af938a60f201"
-  integrity sha512-/fwELDysqdZdhTW9tLUOtpoBnlaI6WVxtrrmB+lAbYkoC7G9NVaOPwxXqwYidgTl9I1ZJGfU/ZEr8GDyUIcZWg==
+"@contentful/rich-text-types@^14.1.2":
+  version "14.1.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-14.1.2.tgz#33162fdbf427891122a96030f806ca9a9cf0e844"
+  integrity sha512-XbgZ7op5uyYYszipgQg/bYobF4b+llXyTwS8hISRniQY9xKESz544eP2OGmRc4J3MHx29M7Vmx7TVA/IK65giQ==
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.2":
   version "2.0.0-printer-fix.2"
