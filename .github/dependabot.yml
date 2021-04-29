@@ -1,0 +1,26 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: gatsby-plugin-purgecss
+    versions:
+    - 5.0.0
+    - 6.0.0
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - 2.10.0
+    - 2.11.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: "@contentful/rich-text-react-renderer"
+    versions:
+    - 14.1.2
