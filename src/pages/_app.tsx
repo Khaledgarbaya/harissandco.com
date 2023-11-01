@@ -86,20 +86,24 @@ const App = ({
         {/* Open Graph */}
         <meta
           property="og:title"
-          content={(openGraphTitle?.value as string) ?? pageTitle?.value}
+          content={
+            (openGraphTitle?.value as string) ?? (pageTitle?.value as string)
+          }
         />
         <meta
           property="og:description"
           content={
             (openGraphDescription?.value as string) ??
-            pageMetaDescription?.value
+            (pageMetaDescription?.value as string)
           }
         />
         {renderOgImageElement()}
         {/* Twitter */}
         <meta
           name="twitter:title"
-          content={(twitterTitle?.value as string) ?? pageTitle?.value}
+          content={
+            (twitterTitle?.value as string) ?? (pageTitle?.value as string)
+          }
         />
         <meta
           name="twitter:card"
@@ -108,7 +112,8 @@ const App = ({
         <meta
           name="twitter:description"
           content={
-            (twitterDescription?.value as string) ?? pageMetaDescription?.value
+            (twitterDescription?.value as string) ??
+            (pageMetaDescription?.value as string)
           }
         />
         {renderTwitterImageElement() as any}{" "}
