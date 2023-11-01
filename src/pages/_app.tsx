@@ -1,7 +1,12 @@
 import Head from "next/head"
 import { UniformAppProps } from "@uniformdev/context-next"
+import { UniformContext } from "@uniformdev/context-react"
 import type { RootComponentInstance } from "@uniformdev/canvas"
+import createUniformContext from "@/context/createUniformContext"
+import "@/canvas"
 import "../styles/globals.scss"
+
+const clientContext = createUniformContext()
 
 const VERCEL_URL = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -10,6 +15,7 @@ const VERCEL_URL = process.env.VERCEL_URL
 const App = ({
   Component,
   pageProps,
+  serverUniformContext,
 }: UniformAppProps<{ data: RootComponentInstance; context: unknown }>) => {
   const { data: composition } = pageProps || {}
   const {
@@ -77,7 +83,9 @@ const App = ({
     <>
       <Head>
         {/* page metadata */}
-        <title>{(pageTitle?.value as string) ?? "Harissa and Co"}</title>
+        <title>
+          {(pageTitle?.value as string) ?? "Uniform Component Starter Kit"}
+        </title>
         <meta
           property="og:description"
           content={pageMetaDescription?.value as string}
@@ -86,24 +94,20 @@ const App = ({
         {/* Open Graph */}
         <meta
           property="og:title"
-          content={
-            (openGraphTitle?.value as string) ?? (pageTitle?.value as string)
-          }
+          content={(openGraphTitle?.value as string) ?? pageTitle?.value}
         />
         <meta
           property="og:description"
           content={
             (openGraphDescription?.value as string) ??
-            (pageMetaDescription?.value as string)
+            pageMetaDescription?.value
           }
         />
         {renderOgImageElement()}
         {/* Twitter */}
         <meta
           name="twitter:title"
-          content={
-            (twitterTitle?.value as string) ?? (pageTitle?.value as string)
-          }
+          content={(twitterTitle?.value as string) ?? pageTitle?.value}
         />
         <meta
           name="twitter:card"
@@ -112,8 +116,7 @@ const App = ({
         <meta
           name="twitter:description"
           content={
-            (twitterDescription?.value as string) ??
-            (pageMetaDescription?.value as string)
+            (twitterDescription?.value as string) ?? pageMetaDescription?.value
           }
         />
         {renderTwitterImageElement() as any}{" "}
@@ -125,7 +128,9 @@ const App = ({
           <link rel="shortcut icon" href={favicon?.value as string} />
         )}
       </Head>
-      <Component {...pageProps} />
+      <UniformContext context={serverUniformContext ?? clientContext}>
+        <Component {...pageProps} />
+      </UniformContext>
     </>
   )
 }
