@@ -11,39 +11,41 @@ export type HomePageProps = {
 }
 
 const HomePage: FC<HomePageProps> = ({}) => (
-  <div className="bg-spring-wood rounded-bottom pt-8">
-    <header className="flex text-outer-space p-4 justify-between items-center bg-white rounded-xl shadow-md container max-w-7xl mx-auto">
-      <h1>
-        <Image src="/logo.png" alt="logo" width={100} height={100} />
-      </h1>
-      <nav>
-        <a href="#" className="mx-2">
-          About the Series
-        </a>
-        <a href="#" className="mx-2">
-          Menu & Pricing
-        </a>
-        <a href="#" className="mx-2">
-          Schedule & Locations
-        </a>
-        <a href="#" className="mx-2">
-          Gallery
-        </a>
-        <a href="#" className="mx-2">
-          FAQ
-        </a>
-        <button className="ml-4 py-2 border border-cinna-bar text-cinna-bar rounded px-8">
-          Reserve a Seat
-        </button>
-      </nav>
+  <div className="bg-spring-wood pt-8">
+    <header className="p-4">
+      <div className="flex text-outer-space p-4 justify-between items-center bg-white rounded-xl shadow-md container max-w-7xl mx-auto">
+        <span>
+          <Image src="/logo.png" alt="logo" width={100} height={100} />
+        </span>
+        <nav>
+          <a href="#" className="mx-2">
+            About the Series
+          </a>
+          <a href="#" className="mx-2">
+            Menu & Pricing
+          </a>
+          <a href="#" className="mx-2">
+            Schedule & Locations
+          </a>
+          <a href="#" className="mx-2">
+            Gallery
+          </a>
+          <a href="#" className="mx-2">
+            FAQ
+          </a>
+          <button className="shadow-md ml-4 py-2 border border-cinna-bar text-cinna-bar rounded-lg px-8">
+            Reserve a Seat
+          </button>
+        </nav>
+      </div>
     </header>
-    <section className="p-8 mt-10 container mx-auto">
-      <h2 className="text-7xl font-bold text-outer-space text-center max-w-4xl w-full mx-auto">
+    <section className="p-12 mt-10 container mx-auto">
+      <h1 className="text-7xl font-bold text-outer-space text-center max-w-4xl w-full mx-auto">
         Popup Brunch Series in <span className="text-cinna-bar">Berlin</span>{" "}
         introducing <span className="text-cinna-bar">Tunisian cuisine</span>
-      </h2>
+      </h1>
       <div className="mt-6 text-center max-w-4xl w-full mx-auto">
-        <button className="mt-4 px-6 py-3 bg-cinna-bar text-white rounded-lg">
+        <button className="mt-4 px-6 py-3 shadow-md bg-cinna-bar text-white rounded-lg">
           Get your Ticket
         </button>
       </div>
@@ -57,16 +59,8 @@ const HomePage: FC<HomePageProps> = ({}) => (
         />
       </div>
     </section>
-    <section className="bg-white">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#f5f3ed"
-          fillOpacity="1"
-          d="M0,128L1440,32L1440,0L0,0Z"
-        ></path>
-      </svg>
-    </section>
-    <section className="bg-white">
+
+    <section className="p-12 relative isolate after:content-[''] after:bg-white after:absolute after:inset-0 after:-skew-y-6 after:-z-10">
       <div className="container max-w-7xl mx-auto text-center">
         <h3 className="text-7xl font-bold text-outer-space text-center max-w-4xl w-full mx-auto">
           Tunisian cuisine, a <span className="text-cinna-bar">delightful</span>{" "}
@@ -77,74 +71,78 @@ const HomePage: FC<HomePageProps> = ({}) => (
         </p>
       </div>
     </section>
-    <section className="bg-spring-wood">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#fff" fillOpacity="1" d="M0,128L1440,32L1440,0L0,0Z"></path>
-      </svg>
-    </section>
-    <section className="bg-spring-wood">
+
+    <section className="bg-spring-wood p-12">
       <h2 className="text-7xl font-bold text-cinna-bar text-center max-w-4xl w-full mx-auto">
         Menu & Pricing
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
         <div className="mx-auto">
-          <Image
-            src="/undraw_breakfast.png"
-            width={300}
-            height={300}
-            alt="Dish name"
-            className="aspect-square object-cover mb-4"
-          />
+          <div className="relative">
+            <Image
+              src="/undraw_breakfast.png"
+              width={300}
+              height={300}
+              alt="Dish name"
+              className="aspect-square object-cover mb-4 rounded-lg shadow-xl"
+            />
+            <span className="text-white absolute bottom-2 right-2 bg-cinna-bar px-2 py-1 rounded-full font-semibold">
+              EUR 25
+            </span>
+          </div>
+
           <h3 className="text-outer-space text-xl font-semibold mb-2">
             Dish Name
           </h3>
           <p className="text-outer-space text-gray-600 mb-4">
             Short description of the dish.
           </p>
-          <span className="text-outer-space text-gray-800 font-semibold">
-            EUR 25
-          </span>
         </div>
         <div className="mx-auto">
-          <Image
-            src="/undraw_barbecue.png"
-            width={300}
-            height={300}
-            alt="Dish name"
-            className="aspect-square object-cover mb-4"
-          />
+          <div className="relative">
+            <Image
+              src="/undraw_barbecue.png"
+              width={300}
+              height={300}
+              alt="Dish name"
+              className="aspect-square object-cover mb-4 rounded-lg shadow-xl"
+            />
+            <span className="text-white absolute bottom-2 right-2 bg-cinna-bar px-2 py-1 rounded-full font-semibold">
+              EUR 25
+            </span>
+          </div>
+
           <h3 className="text-outer-space text-xl font-semibold mb-2">
             Dish Name
           </h3>
           <p className="text-outer-space text-gray-600 mb-4">
             Short description of the dish.
           </p>
-          <span className="text-outer-space text-gray-800 font-semibold">
-            EUR 25
-          </span>
         </div>
         <div className="mx-auto">
-          <Image
-            src="/undraw_pancakes.png"
-            width={300}
-            height={300}
-            alt="Dish name"
-            className="aspect-square object-cover mb-4"
-          />
+          <div className="relative">
+            <Image
+              src="/undraw_pancakes.png"
+              width={300}
+              height={300}
+              alt="Dish name"
+              className="aspect-square object-cover mb-4 rounded-lg shadow-xl"
+            />
+            <span className="text-white absolute bottom-2 right-2 bg-cinna-bar px-2 py-1 rounded-full font-semibold">
+              EUR 25
+            </span>
+          </div>
           <h3 className="text-outer-space text-xl font-semibold mb-2">
             Dish Name
           </h3>
           <p className="text-outer-space text-gray-600 mb-4">
             Short description of the dish.
           </p>
-          <span className="text-outer-space text-gray-800 font-semibold">
-            EUR 25
-          </span>
         </div>
       </div>
     </section>
 
-    <footer className="bg-white py-6 shadow-md ">
+    <footer className="bg-white p-4 shadow-md ">
       <div className="container max-w-7xl mx-auto flex justify-between items-center">
         <div>
           <a href="#" className="text-2xl font-bold text-gray-800">

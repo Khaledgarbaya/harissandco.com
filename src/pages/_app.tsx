@@ -1,22 +1,12 @@
 import Head from "next/head"
-import { UniformAppProps } from "@uniformdev/context-next"
-import { UniformContext } from "@uniformdev/context-react"
-import type { RootComponentInstance } from "@uniformdev/canvas"
-import createUniformContext from "@/context/createUniformContext"
-import "@/canvas"
 import "../styles/globals.scss"
-
-const clientContext = createUniformContext()
+import { AppProps } from "next/app"
 
 const VERCEL_URL = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : ""
 
-const App = ({
-  Component,
-  pageProps,
-  serverUniformContext,
-}: UniformAppProps<{ data: RootComponentInstance; context: unknown }>) => {
+const App = ({ Component, pageProps }: AppProps) => {
   const { data: composition } = pageProps || {}
   const {
     pageTitle,
@@ -128,9 +118,7 @@ const App = ({
           <link rel="shortcut icon" href={favicon?.value as string} />
         )}
       </Head>
-      <UniformContext context={serverUniformContext ?? clientContext}>
-        <Component {...pageProps} />
-      </UniformContext>
+      <Component {...pageProps} />
     </>
   )
 }
